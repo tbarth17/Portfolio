@@ -15,7 +15,7 @@ $mobile: new-breakpoint(max-width 670px);
 .header {
   background: url(../images/road-background.jpg) fixed center center;
   background-size: cover;
-  height: 450px;
+  height: 425px;
   padding-top: 125px;
   text-align: center;
 
@@ -89,12 +89,23 @@ $mobile: new-breakpoint(max-width 670px);
       margin: 10px;
       border: 1px solid black;
       border-radius: 3px;
-      padding: 5px;
+      padding: 10px;
       background: #CDCDCE;
       color: black;
     }
   }
 
+
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+}
+
+.work {
+  @include span-columns(3);
+  @include shift(.5);
+  margin-top: 0;
 
   @include media($mobile) {
     @include span-columns(10);
@@ -111,6 +122,11 @@ $mobile: new-breakpoint(max-width 670px);
   border-radius: 5px;
   padding: 25px;
   border: 1px solid gray;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   h2 {
     margin: 0;
@@ -152,5 +168,10 @@ $mobile: new-breakpoint(max-width 670px);
 
 .swamp-rabbit {
   background: url(../images/swamp-rabbit.png) center center;
+  background-size: cover;
+}
+
+.surf-paddle {
+  background: url(../images/surf-paddle.png) center center;
   background-size: cover;
 }
