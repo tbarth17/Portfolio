@@ -4,12 +4,12 @@
 
 // Custom Styles
 body {
-  background: #fafafa;
+  background: #E7E6E5;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
 
-$mobile: new-breakpoint(max-width 600px);
+$mobile: new-breakpoint(max-width 670px);
 
 
 .header {
@@ -30,7 +30,6 @@ $mobile: new-breakpoint(max-width 600px);
 
 .nav-container {
    margin-top: 50px;
-   outline: 1px solid red;
 
   a {
     color: black;
@@ -69,13 +68,14 @@ $mobile: new-breakpoint(max-width 600px);
 }
 
 .skill-set {
-  @include span-columns(7.5);
+  @include span-columns(7.75);
   border: 1px solid gray;
   border-radius: 5px;
   margin: em(20px);
   padding: em(20px);
   min-height: em(250px);
   display: inline-block;
+  background: white;
 
   h4 {
     margin: 0;
@@ -90,6 +90,8 @@ $mobile: new-breakpoint(max-width 600px);
       border: 1px solid black;
       border-radius: 3px;
       padding: 5px;
+      background: #CDCDCE;
+      color: black;
     }
   }
 
@@ -103,9 +105,52 @@ $mobile: new-breakpoint(max-width 600px);
 .projects {
   @include span-columns(11);
   @include shift(.5);
-  min-height: 200px;
-  background: chartreuse;
+  min-height: 350px;
+  background: #A3C2F0;
   margin-bottom: 20px;
   border-radius: 5px;
+  padding: 25px;
+  border: 1px solid gray;
 
+  h2 {
+    margin: 0;
+  }
+
+  h4{
+    margin-bottom: 0;
+  }
+
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+}
+}
+
+.screenshot {
+  @include span-columns(6);
+  height: 300px;
+  background: url(http://fillmurray.com/300/300) center center;
+  background-size: cover;
+  border-radius: 5px;
+  border: 1px solid gray;
+
+  @include media($mobile) {
+    @include span-columns(12);
+    /* @include shift(.5); */
+}
+}
+
+.pop {
+  background: url(../images/nodrop.png) center center;
+  background-size: cover;
+}
+
+.majestic-thai {
+  background: url(../images/majestic-thai.png) center center;
+  background-size: cover;
+}
+
+.swamp-rabbit {
+  background: url(../images/swamp-rabbit.png) center center;
+  background-size: cover;
 }
