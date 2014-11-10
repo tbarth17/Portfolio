@@ -1,0 +1,111 @@
+ // Bourbon & Neat
+@import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
+
+// Custom Styles
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+$mobile: new-breakpoint(max-width 600px);
+
+
+.header {
+  background: url(../images/road-background.jpg) fixed center center;
+  background-size: cover;
+  height: 450px;
+  padding-top: 125px;
+  text-align: center;
+
+  h1{
+    margin: 0;
+  }
+}
+
+.title-container {
+  text-align: center;
+}
+
+.nav-container {
+   margin-top: 50px;
+   outline: 1px solid red;
+
+  a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 4%;
+    margin-right: 4%;
+
+    &:hover {
+      color: white;
+    }
+
+    &:active {
+      color: gray;
+    }
+  }
+}
+
+.wrapper {
+  @include outer-container;
+}
+
+.avatar {
+  @include span-columns(3);
+  @include shift(.5);
+  background: url(../images/avatar.jpg) center center;
+  background-size: cover;
+  height: em(250px);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+}
+
+.skill-set {
+  @include span-columns(7.5);
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: em(20px);
+  padding: em(20px);
+  min-height: em(250px);
+  display: inline-block;
+
+  h4 {
+    margin: 0;
+  }
+
+  ul{
+    list-style: none;
+
+    li{
+      float: left;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 5px;
+    }
+  }
+
+
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+}
+
+.projects {
+  @include span-columns(11);
+  @include shift(.5);
+  min-height: 200px;
+  background: chartreuse;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
+}
