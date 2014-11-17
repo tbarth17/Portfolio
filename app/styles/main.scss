@@ -9,11 +9,19 @@ body {
   color: #333;
 }
 
+$contact-large-break: new-breakpoint(max-width 1040px);
+$contact-med-large-break: new-breakpoint(max-width 887px);
+$contact-med-break: new-breakpoint(max-width 775px);
+$contact-med-small-break: new-breakpoint(max-width 686px);
+$contact-small-break: new-breakpoint(max-width 623px);
+$contact-mini-break: new-breakpoint(max-width 600px);
 $pop-break: new-breakpoint(max-width 1000px);
 $tablet: new-breakpoint(max-width 936px);
 $small-tablet: new-breakpoint(max-width 831px);
 $mobile: new-breakpoint(max-width 760px);
 $mid-mobile: new-breakpoint(max-width 500px);
+$med-mobile: new-breakpoint(max-width 453px);
+$med-small-mobile: new-breakpoint(max-width 401px);
 $small-mobile: new-breakpoint(max-width 350px);
 
 .header {
@@ -443,7 +451,43 @@ button {
 
       li {
         float: left;
-        margin: 5% 6% 5% 6%;
+        margin: 5% 7% 5% 7%;
+
+        @include media($contact-large-break) {
+          margin: 5% 6% 5% 6%;
+        }
+
+        @include media($contact-med-large-break) {
+        margin: 5%;
+        }
+
+        @include media($contact-med-break) {
+          margin: 4%;
+        }
+
+        @include media($mobile) {
+          margin: 3%;
+        }
+
+        @include media($contact-med-small-break) {
+          margin: 2%;
+        }
+
+        @include media($contact-small-break) {
+          margin: 1.5%;
+        }
+
+        @include media($contact-mini-break) {
+          margin: 3% 10% 3% 10%;
+        }
+
+        @include media($med-mobile) {
+          margin: 3% 8% 3% 8%;
+        }
+
+        @include media($med-small-mobile) {
+          margin: 3% 7% 3% 7%;
+        }
 
         @include media($small-mobile) {
           margin: 2.25% 2.25% 2.25% 2.25%;
