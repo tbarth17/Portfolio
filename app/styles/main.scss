@@ -9,11 +9,14 @@ body {
   color: #333;
 }
 
-$mobile: new-breakpoint(max-width 670px);
-
+$tablet: new-breakpoint(max-width 980px);
+$small-tablet: new-breakpoint(max-width 831px);
+$mobile: new-breakpoint(max-width 740px);
+$mid-mobile: new-breakpoint(max-width 500px);
+$small-mobile: new-breakpoint(max-width 350px);
 
 .header {
-  background: url(../images/road-background.jpg) fixed center center;
+  background: url(../images/road-background.jpg) fixed bottom;
   background-size: cover;
   height: 425px;
   padding-top: 125px;
@@ -29,14 +32,17 @@ $mobile: new-breakpoint(max-width 670px);
 }
 
 .nav-container {
-   margin-top: 50px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   text-align: center;
+   background: #000000;
 
   a {
-    color: black;
+    color: #CDCDCE;
     font-weight: bold;
     text-decoration: none;
-    margin-left: 4%;
-    margin-right: 4%;
+    margin-left: 9%;
+    margin-right: 9%;
 
     &:hover {
       color: white;
@@ -45,9 +51,71 @@ $mobile: new-breakpoint(max-width 670px);
     &:active {
       color: gray;
     }
+
+    @include media($small-tablet) {
+      margin-left: 8%;
+      margin-right: 8%;
+    }
+
+    @include media($mobile) {
+      margin-left: 7%;
+      margin-right: 7%;
+    }
+
+    @include media($mid-mobile) {
+      margin-left: 4%;
+      margin-right: 4%;
+    }
+
+    @include media($small-mobile) {
+      margin-left: 3%;
+      margin-right: 3%;
+    }
   }
 }
 
+button {
+  margin: 0 10px 15px 10px;
+  -moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+	-webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+	background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+	background-color:#7892c2;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:19px;
+	padding:12px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+
+    &:hover {
+    	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+    	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+    	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+    	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+    	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+    	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+    	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+    	background-color:#476e9e;
+    }
+
+    &:active {
+    	position:relative;
+    	top:1px;
+    }
+}
 .wrapper {
   @include outer-container;
 }
@@ -61,19 +129,38 @@ $mobile: new-breakpoint(max-width 670px);
   border-radius: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
+
   @include media($mobile) {
     @include span-columns(10);
     @include shift(1);
   }
 }
 
-.skill-set {
+.statement {
   @include span-columns(7.75);
   border: 1px solid gray;
   border-radius: 5px;
   margin: em(20px);
   padding: em(20px);
   min-height: em(250px);
+  display: inline-block;
+  background: white;
+
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+}
+
+.tool-kit {
+  @include span-columns(11);
+  @include shift(.5);
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: em(20px);
+  margin-bottom: em(20px);
+  padding: em(20px);
+  min-height: em(200px);
   display: inline-block;
   background: white;
 
@@ -142,36 +229,225 @@ $mobile: new-breakpoint(max-width 670px);
 }
 }
 
+.blurb {
+  @include span-columns(6);
+  margin: 0;
+
+  @include media($mobile) {
+    @include span-columns(12);
+    margin: 0;
+  }
+}
+
 .screenshot {
   @include span-columns(6);
-  height: 300px;
-  background: url(http://fillmurray.com/300/300) center center;
+  min-height: 450px;
   background-size: cover;
   border-radius: 5px;
   border: 1px solid gray;
 
   @include media($mobile) {
     @include span-columns(12);
-    /* @include shift(.5); */
+    min-height: 300px;
+  }
+
+  @include media($mid-mobile) {
+    @include span-columns(12);
+    margin: 0;
+    min-height: 200px;
+  }
+
+  @include media($small-mobile) {
+    @include span-columns(12);
+    margin: 0;
+    min-height: 200px;
+  }
 }
+
+.tools {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+
+    li{
+      float: left;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 10px;
+      background: #CDCDCE;
+      color: black;
+    }
+}
+
+.description {
+  @include media($mobile) {
+    @include span-columns(12);
+  }
+}
+
+.fest {
+  background: url(../images/ivr.png) center center;
+  background-size: cover;
+  background-position: top;
+  min-height: 500px;
+
+  @include media($tablet) {
+    min-height: 550px;
+  }
+
+  @include media($small-tablet) {
+    min-height: 600px;
+  }
+
+  @include media($mobile) {
+    min-height: 300px;
+  }
+
+  @include media($mid-mobile) {
+    min-height: 225px;
+  }
 }
 
 .pop {
   background: url(../images/nodrop.png) center center;
   background-size: cover;
+  background-position: top;
+
+
+  @include media($tablet) {
+    min-height: 525px;
+  }
+
+  @include media($small-tablet) {
+    min-height: 550px;
+  }
+
+  @include media($mobile) {
+    min-height: 300px;
+  }
+
+  @include media($mid-mobile) {
+    min-height: 225px;
+  }
 }
 
 .majestic-thai {
   background: url(../images/majestic-thai.png) center center;
   background-size: cover;
+  background-position: top;
+
 }
 
 .swamp-rabbit {
   background: url(../images/swamp-rabbit.png) center center;
   background-size: cover;
+  background-position: top;
+
 }
 
 .surf-paddle {
   background: url(../images/surf-paddle.png) center center;
   background-size: cover;
+  background-position: top;
+  min-height: 300px;
+
+  @include media($small-tablet) {
+    min-height: 350px;
+  }
+
+}
+
+.game {
+  background: url(../images/game.png) center center;
+  background-size: cover;
+  background-position: top;
+
+  @include media($tablet) {
+    min-height: 500px;
+  }
+
+  @include media($small-tablet) {
+    min-height: 525px;
+  }
+
+  @include media($mobile) {
+    min-height: 325px;
+  }
+
+  @include media($mid-mobile) {
+    min-height: 225px;
+  }
+
+}
+
+.contact {
+  @include span-columns(11);
+  @include shift(.5);
+  min-height: 150px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background: #CDCDCE;
+  margin-bottom: 20px;
+  padding: 20px;
+
+  h2{
+    margin: 0;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+
+    a {
+
+      li {
+        float: left;
+        margin: 5% 6% 5% 6%;
+
+        @include media($small-mobile) {
+          margin: 2.25% 2.25% 2.25% 2.25%;
+        }
+      }
+    }
+  }
+
+  @include media($mobile) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+}
+
+
+.linkedin {
+  background: url(http://www.arcogent.com/wp-content/uploads/2012/12/transparent-Linkedin-logo-icon.png);
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+  border: 1px solid gray;
+}
+
+.email {
+  background: url(http://www.liquidtype.co.za/images/email-logo.png);
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  border: 1px solid gray;
+}
+
+.phone {
+  background: url(http://fr.fordesigner.com/imguploads/Image/cjbc/zcool/png20080526/1211776425.png);
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  border: 1px solid gray;
+}
+
+.github {
+  background: url(http://cdn.flaticon.com/png/256/24233.png);
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  border: 1px solid gray;
 }
