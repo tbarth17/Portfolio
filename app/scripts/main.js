@@ -1,5 +1,6 @@
-  var nav = document.querySelector('.nav-container');
-  var origOffsetY = nav.offsetTop;
+  $(document).ready(function(){
+    $(".nav-container").sticky({topSpacing:0});
+  });
 
   function onScroll(e) {
     window.scrollY >= origOffsetY ? nav.classList.add('sticky') :
