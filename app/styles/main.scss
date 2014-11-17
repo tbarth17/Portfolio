@@ -49,13 +49,15 @@ $small-mobile: new-breakpoint(max-width 350px);
 
 
   a {
-    color: #CDCDCE;
+    color: #A3C2F0;
     font-weight: bold;
     text-decoration: none;
     margin-left: 9%;
     margin-right: 9%;
 
     &:hover {
+      transition-property: color;
+      transition-duration: .5s;
       color: white;
     }
 
@@ -157,10 +159,22 @@ button {
   border: 1px solid gray;
   border-radius: 5px;
   margin: em(20px);
-  padding: em(20px);
+  padding: em(30px);
   min-height: em(250px);
   display: inline-block;
   background: white;
+  line-height: 1.7;
+
+  a{
+    text-decoration: none;
+    color: #696667;
+
+    &:hover {
+      transition-property: color;
+      transition-duration: .5s;
+      color: #5083C8;
+    }
+  }
 
   @include media($mobile) {
     @include span-columns(10);
