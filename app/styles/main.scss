@@ -15,6 +15,12 @@ $mobile: new-breakpoint(max-width 740px);
 $mid-mobile: new-breakpoint(max-width 500px);
 $small-mobile: new-breakpoint(max-width 350px);
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .header {
   background: url(../images/road-background.jpg) fixed bottom;
   background-size: cover;
@@ -420,7 +426,7 @@ button {
 
 
 .linkedin {
-  background: url(http://www.arcogent.com/wp-content/uploads/2012/12/transparent-Linkedin-logo-icon.png);
+  background: url(../images/linkedin.png);
   background-size: cover;
   height: 100px;
   width: 100px;
@@ -429,25 +435,22 @@ button {
 }
 
 .email {
-  background: url(http://www.liquidtype.co.za/images/email-logo.png);
+  background: url(../images/email-logo.png);
   background-size: cover;
   height: 100px;
   width: 100px;
-  border: 1px solid gray;
 }
 
 .phone {
-  background: url(http://fr.fordesigner.com/imguploads/Image/cjbc/zcool/png20080526/1211776425.png);
+  background: url(../images/phone.png);
   background-size: cover;
   height: 100px;
   width: 100px;
-  border: 1px solid gray;
 }
 
 .github {
-  background: url(http://cdn.flaticon.com/png/256/24233.png);
+  background: url(../images/github.png);
   background-size: cover;
   height: 100px;
   width: 100px;
-  border: 1px solid gray;
 }
