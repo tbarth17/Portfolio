@@ -1,5 +1,5 @@
 'use strict';
-// generated on 2014-11-09 using generator-tiy-webapp 0.0.8
+// generated on 2014-10-25 using generator-tiy-webapp 0.0.8
 
 // Require your modules
 var gulp = require('gulp');
@@ -9,7 +9,7 @@ var exec = require('child_process').exec;
 var prompt = require('gulp-prompt');
 
 gulp.task('styles', function () {
-  return gulp.src('app/styles/main.scss')
+  return gulp.src(['app/styles/main.scss', 'app/styles/**/*.css'])
     .pipe($.plumber())
     .pipe($.rubySass({
       style: 'compressed',
@@ -23,7 +23,7 @@ gulp.task('html', ['styles'], function () {
 
   return gulp.src('app/*.html')
     .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
-    .pipe($.if('*.css', $.csso()))
+    // .pipe($.if('*.css', $.csso()))
     .pipe($.useref.restore())
     .pipe($.useref())
     .pipe(gulp.dest('dist'));
@@ -44,6 +44,7 @@ gulp.task('extras', function () {
 });
 
 gulp.task('clean', function (cb) {
+  $.cache.clearAll();
   rimraf('.tmp', function () {
     rimraf('dist', cb);
   });
@@ -101,7 +102,12 @@ gulp.task('watch', ['connect', 'serve'], function () {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['html', 'images', 'extras'], function () {
+gulp.task('fonts', [], function(){
+  return gulp.src(['app/**/*.eot', 'app/**/*.svg', 'app/**/*.ttf', 'app/**/*.woff'])
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', ['html', 'images', 'extras', 'fonts'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
