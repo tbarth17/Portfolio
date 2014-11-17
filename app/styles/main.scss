@@ -15,12 +15,6 @@ $mobile: new-breakpoint(max-width 740px);
 $mid-mobile: new-breakpoint(max-width 500px);
 $small-mobile: new-breakpoint(max-width 350px);
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
 .header {
   background: url(../images/road-background.jpg) fixed bottom;
   background-size: cover;
@@ -42,6 +36,8 @@ $small-mobile: new-breakpoint(max-width 350px);
    padding-bottom: 20px;
    text-align: center;
    background: #000000;
+   width: 100%;
+
 
   a {
     color: #CDCDCE;
