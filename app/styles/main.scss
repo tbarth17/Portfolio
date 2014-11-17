@@ -9,9 +9,10 @@ body {
   color: #333;
 }
 
-$tablet: new-breakpoint(max-width 980px);
+$pop-break: new-breakpoint(max-width 1000px);
+$tablet: new-breakpoint(max-width 936px);
 $small-tablet: new-breakpoint(max-width 831px);
-$mobile: new-breakpoint(max-width 740px);
+$mobile: new-breakpoint(max-width 760px);
 $mid-mobile: new-breakpoint(max-width 500px);
 $small-mobile: new-breakpoint(max-width 350px);
 
@@ -54,14 +55,19 @@ $small-mobile: new-breakpoint(max-width 350px);
       color: gray;
     }
 
+    @include media($tablet) {
+      margin-left: 8%;
+      margin-right: 8%;
+    }
+
     @include media($small-tablet) {
       margin-left: 8%;
       margin-right: 8%;
     }
 
     @include media($mobile) {
-      margin-left: 7%;
-      margin-right: 7%;
+      margin-left: 6%;
+      margin-right: 6%;
     }
 
     @include media($mid-mobile) {
@@ -243,7 +249,7 @@ button {
 
 .screenshot {
   @include span-columns(6);
-  min-height: 450px;
+  min-height: 440px;
   background-size: cover;
   border-radius: 5px;
   border: 1px solid gray;
@@ -292,14 +298,14 @@ button {
   background: url(../images/ivr.png) center center;
   background-size: cover;
   background-position: top;
-  min-height: 500px;
+  min-height: 540px;
 
   @include media($tablet) {
-    min-height: 550px;
+    min-height: 660px;
   }
 
   @include media($small-tablet) {
-    min-height: 600px;
+    min-height: 680px;
   }
 
   @include media($mobile) {
@@ -315,14 +321,18 @@ button {
   background: url(../images/nodrop.png) center center;
   background-size: cover;
   background-position: top;
+  min-height: 525px;
 
+  @include media($pop-break) {
+    min-height: 580px;
+  }
 
   @include media($tablet) {
-    min-height: 525px;
+    min-height: 620px;
   }
 
   @include media($small-tablet) {
-    min-height: 550px;
+    min-height: 670px;
   }
 
   @include media($mobile) {
@@ -339,23 +349,50 @@ button {
   background-size: cover;
   background-position: top;
 
+  @include media($small-tablet) {
+    min-height: 510px;
+  }
+
+  @include media($mobile) {
+    min-height: 300px;
+  }
+
+  @include media($mid-mobile) {
+    min-height: 225px;
+  }
 }
 
 .swamp-rabbit {
   background: url(../images/swamp-rabbit.png) center center;
   background-size: cover;
   background-position: top;
+  min-height: 530px;
 
+  @include media($tablet) {
+    min-height: 550px;
+  }
+
+  @include media($small-tablet) {
+    min-height: 580px;
+  }
 }
 
 .surf-paddle {
   background: url(../images/surf-paddle.png) center center;
   background-size: cover;
   background-position: top;
-  min-height: 300px;
+  min-height: 340px;
 
   @include media($small-tablet) {
-    min-height: 350px;
+    min-height: 370px;
+  }
+
+  @include media($mobile) {
+    min-height: 300px;
+  }
+
+  @include media($mid-mobile) {
+    min-height: 225px;
   }
 
 }
@@ -364,17 +401,18 @@ button {
   background: url(../images/game.png) center center;
   background-size: cover;
   background-position: top;
+  min-height: 490px;
 
   @include media($tablet) {
-    min-height: 500px;
+    min-height: 580px;
   }
 
   @include media($small-tablet) {
-    min-height: 525px;
+    min-height: 600px;
   }
 
   @include media($mobile) {
-    min-height: 325px;
+    min-height: 300px;
   }
 
   @include media($mid-mobile) {
@@ -445,8 +483,9 @@ button {
 }
 
 .github {
-  background: url(../images/github.png);
+  background: black url(../images/github-10-xxl.png);
   background-size: cover;
   height: 100px;
   width: 100px;
+  border-radius: 15px;
 }
