@@ -22,6 +22,12 @@
 
   $('.to-skills').click(function() {
     $('body').animate({
-        scrollTop: $('.tool-kit').offset().top
+        scrollTop: $('.tool-kit').offset().top - 80
+    }, 800);
+});
+
+  $('.to-contact').click(function() {
+    $('body').animate({
+        scrollTop: $('.contact').offset().top - 80
     }, 800);
 });
