@@ -15,6 +15,7 @@ $contact-med-break: new-breakpoint(max-width 811px);
 $contact-med-small-break: new-breakpoint(max-width 805px);
 $contact-small-break: new-breakpoint(max-width 623px);
 $contact-mini-break: new-breakpoint(max-width 600px);
+$fest-med-large-break: new-breakpoint(max-width 991px);
 $pop-break: new-breakpoint(max-width 1000px);
 $tablet: new-breakpoint(max-width 936px);
 $small-tablet: new-breakpoint(max-width 831px);
@@ -322,10 +323,18 @@ button {
   background: url(../images/ivr.png) center center;
   background-size: cover;
   background-position: top;
-  min-height: 540px;
+  min-height: 555px;
+
+  @include media($contact-large-break) {
+    min-height: 580px;
+  }
+
+  @include media($fest-med-large-break) {
+    min-height: 600px;
+  }
 
   @include media($tablet) {
-    min-height: 660px;
+    min-height: 700px;
   }
 
   @include media($small-tablet) {

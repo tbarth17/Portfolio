@@ -1,3 +1,4 @@
+console.log("Welcome to my portfolio!")
   $(document).ready(function(){
     $(".nav-container").sticky({topSpacing:0});
   });
