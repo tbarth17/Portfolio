@@ -24,6 +24,7 @@ $mid-mobile: new-breakpoint(max-width 500px);
 $med-mobile: new-breakpoint(max-width 453px);
 $med-small-mobile: new-breakpoint(max-width 401px);
 $small-mobile: new-breakpoint(max-width 350px);
+$contact-small-mobile: new-breakpoint(max-width 385px);
 
 .header {
   background: url(../images/road-background.jpg) fixed bottom;
@@ -539,5 +540,12 @@ button {
     color: white;
     margin: 5px;
     padding: 10px;
+  }
+
+  .email-contact-link {
+    @include media($contact-small-mobile) {
+    margin: 0;
+    font-size: 75%;
+  }
   }
 }
