@@ -1,4 +1,4 @@
-console.log("Welcome to my portfolio!")
+console.log("Welcome to my portfolio!");
   $(document).ready(function(){
     $(".nav-container").sticky({topSpacing:0});
   });
@@ -11,18 +11,18 @@ console.log("Welcome to my portfolio!")
 
   $('.to-work').click(function() {
     $('body, html').animate({
-        scrollTop: $('.work').offset().top - 60
+        scrollTop: $('.work').offset().top - 80
     }, 800);
 });
 
   $('.to-skills').click(function() {
     $('body, html').animate({
-        scrollTop: $('.tool-kit').offset().top - 80
+        scrollTop: $('.tool-kit').offset().top - 100
     }, 800);
 });
 
   $('.to-contact').click(function() {
     $('body, html').animate({
-        scrollTop: $('.contact').offset().top - 80
+        scrollTop: $('.contact').offset().top - 100
     }, 800);
 });
