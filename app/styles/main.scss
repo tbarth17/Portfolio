@@ -11,8 +11,8 @@ body {
 
 $contact-large-break: new-breakpoint(max-width 1040px);
 $contact-med-large-break: new-breakpoint(max-width 887px);
-$contact-med-break: new-breakpoint(max-width 775px);
-$contact-med-small-break: new-breakpoint(max-width 686px);
+$contact-med-break: new-breakpoint(max-width 811px);
+$contact-med-small-break: new-breakpoint(max-width 805px);
 $contact-small-break: new-breakpoint(max-width 623px);
 $contact-mini-break: new-breakpoint(max-width 600px);
 $pop-break: new-breakpoint(max-width 1000px);
@@ -168,12 +168,13 @@ button {
 
   a{
     text-decoration: none;
-    color: #696667;
+    color: #808080;
+    font-weight: 500;
 
     &:hover {
       transition-property: color;
-      transition-duration: 1s;
-      color: #5083C8;
+      transition-duration: .7s;
+      color: #476E9E;
     }
   }
 
@@ -465,6 +466,19 @@ button {
   a{
     text-decoration: none;
       }
+
+  @include media($contact-large-break) {
+    width: 40%;
+  }
+
+  @include media($contact-med-break) {
+    margin: .5%;
+  }
+
+  @include media($contact-med-small-break) {
+    display: block;
+    width: 100%;
+  }
 }
 
   @include media($mobile) {
