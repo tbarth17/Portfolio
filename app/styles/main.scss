@@ -450,7 +450,7 @@ button {
   min-height: 150px;
   border-radius: 5px;
   border: 1px solid gray;
-  background: #CDCDCE;
+  background: white;
   margin-bottom: 20px;
   padding: 20px;
 
@@ -458,19 +458,13 @@ button {
     margin: 0;
   }
 
-.contact-list {
-  @include span-columns(12);
-  list-style: none;
-  padding: 0;
+.contact-list-items {
+  margin: 1%;
+  display: inline-block;
 
-      li {
-        float: left;
-        margin: 1%;
-
-        a{
-          text-decoration: none;
-        }
-  }
+  a{
+    text-decoration: none;
+      }
 }
 
   @include media($mobile) {
@@ -509,7 +503,6 @@ button {
 
 .contact-list-container {
   @include span-columns(12);
-  min-height: 50px;
   text-align: center;
 }
 
