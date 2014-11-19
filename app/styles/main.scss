@@ -36,6 +36,10 @@ $contact-small-mobile: new-breakpoint(max-width 385px);
   h1{
     margin: 0;
   }
+
+  @include media($small-mobile) {
+    background: url(../images/road-background-mobile.jpg) fixed bottom;
+  }
 }
 
 .title-container {
