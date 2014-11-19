@@ -37,9 +37,9 @@ $contact-small-mobile: new-breakpoint(max-width 385px);
     margin: 0;
   }
 
-  @include media($small-mobile) {
-    background: url(../images/road-background-mobile.jpg) fixed bottom;
-  }
+   @include media($small-mobile) {
+  background: url(../images/road-background-mobile.jpg) fixed center;
+}
 }
 
 .title-container {
